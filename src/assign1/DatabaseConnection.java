@@ -1,5 +1,5 @@
 package assign1;
-import java.sql.Connection;
+import java.sql.*;
 
 
 public class DatabaseConnection {
@@ -12,10 +12,11 @@ public class DatabaseConnection {
 		
 		String url = "jdbc:sqlserver://localhost:1433;database=Assignment1";
 		String user = "app";
-		String password = "123";
+		String password = "app";
 		try {
-			DatabaseConnection con = DriverManager.getConnection(url, user, password);
-		} catch (SQLExcpetion e) {
+			Connection con = DriverManager.getConnection(url, user, password);
+			
+		} catch (SQLException e) { System.out.println("SQL Exception: " + e);
 			
 		}
 	}
